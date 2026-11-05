@@ -2,9 +2,9 @@
 
 ## Modelo Físico
 
-Jugador = (*idJugador*, nombre, apellido, fecha_nacimiento, altura, peso, posición).
-Equipo = (*idEquipo*, nombre, ciudad, conferencia).
-Contrato = (*idJugador(fk), idEquipo(fk), fecha_desde*, fecha_hasta).
+Jugador = (*idJugador*, nombre, apellido, fecha_nacimiento, altura, peso, posición).  
+Equipo = (*idEquipo*, nombre, ciudad, conferencia).  
+Contrato = (*idJugador(fk), idEquipo(fk), fecha_desde*, fecha_hasta).  
 Partido = (*idPartido*, fecha, idEquipoLocal(fk), idEquipoVisitante(fk), puntosLocal, puntosVisitante)
 
 ## Álgebra Relacional
@@ -14,22 +14,22 @@ Partido = (*idPartido*, fecha, idEquipoLocal(fk), idEquipoVisitante(fk), puntosL
 Reportar nombre y ciudad de equipos que hayan jugado partidos durante 2023 pero no durante 2024.
 
 PROYECTAR e.nombre, e.ciudad (SELECCION fecha >= '2023-01-01' y fecha <= '2023-12-31' (Equipo |x| Partido)) -
-PROYECTAR e.nombre, e.ciudad (SELECCION fecha >= '2024-01-01' y fecha <= '2024-12-31' (Equipo |x| Partido))
+PROYECTAR e.nombre, e.ciudad (SELECCION fecha >= '2024-01-01' y fecha <= '2024-12-31' (Equipo |x| Partido))  
 
 ### Punto 2.AR
 
 Listar jugadores que jugaron en todos los equipos de la conferencia Este.
 
-EquiposEste <= PROYECTAR idEquipo (SELECCION conferencia = 'Este'(Equipo))
-Contratos <= PROYECTAR idJugador, idEquipo (Contrato)
-PROYECTAR idJugador, nombre, apellido (Contratos % EquiposEste)
+EquiposEste <= PROYECTAR idEquipo (SELECCION conferencia = 'Este'(Equipo))  
+Contratos <= PROYECTAR idJugador, idEquipo (Contrato)  
+PROYECTAR idJugador, nombre, apellido (Contratos % EquiposEste)  
 
 ### Punto 3.AR
 
 Modificar la ciudad del equipo con idEquipo 5 a "San Francisco"
 
-EquipoCinco <= SELECCIONAR idEquipo = 5 (Equipo)
-ACTUALIZAR EquipoCinco.ciudad <= EquipoCinco.ciudad = 'San Francisco'
+EquipoCinco <= SELECCIONAR idEquipo = 5 (Equipo)  
+ACTUALIZAR EquipoCinco.ciudad <= EquipoCinco.ciudad = 'San Francisco'  
 
 ## SQL
 
