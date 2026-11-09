@@ -14,17 +14,13 @@
 
 Lista las mascotas que recibieron la vacuna "Triple Felina" con costo menor a $10.000 al momento de la aplicación.
 
-π id_mascota (σ nombreV = ‘Triple Felina’ and precio < 10000 (Aplicación_Vacuna))
+![Punto 1 en Algebra Relacional del Ejercicio 3](./Punto%203_1_AR.png)
 
 ### Punto 2.AR
 
 Listar los datos de las mascotas que no se atendieron durante el año actual.
 
-Consulta2026 <= π id_mascota, nombre, especie, raza, f_nac, dni, cliente (σ fecha >= ‘2026-01-01’ and fecha <= ‘2026-12-31’(Mascota |x| Consulta))
-
-Consulta <= π id_mascota, nombre, especie, raza, f_nac, dni, cliente (Mascota |x| Consulta)
-
-Consulta – Consulta2026
+![Punto 2 en Algebra Relacional del Ejercicio 3](./Punto%203_2_AR.png)
 
 ## SQL
 
